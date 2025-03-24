@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hpvg2sgta-nodejs-gitops
+  description: This is GitOps manifest for hpvg2sgta-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hpvg2sgta-nodejs
+    backstage.io/kubernetes-id: hpvg2sgta-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hpvg2sgta-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hpvg2sgta-nodejs
